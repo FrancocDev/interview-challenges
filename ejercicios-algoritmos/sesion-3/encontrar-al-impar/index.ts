@@ -1,4 +1,11 @@
 export default function encontrarImpar(numeros: number[]): number {
-  // TODO: implementar
-  return 0;
+  const numberSet = new Set<number>();
+  numeros.forEach((num) => {
+    if (numberSet.has(num)) {
+      numberSet.delete(num);
+    } else {
+      numberSet.add(num);
+    }
+  });
+  return numberSet.values().toArray().at(0);
 }

@@ -1,4 +1,14 @@
 export default function contarDuplicados(texto: string): number {
-  // TODO: implementar
-  return 0;
+  const textArr = texto.toLocaleLowerCase().split("");
+  const set = new Set(textArr);
+  const emptySet = new Set();
+
+  textArr.forEach((letter) => {
+    if (set.has(letter)) {
+      set.delete(letter);
+    } else {
+      emptySet.add(letter);
+    }
+  });
+  return emptySet.size;
 }
