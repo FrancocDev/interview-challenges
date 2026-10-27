@@ -10,6 +10,14 @@ type Output = {
 };
 
 export default function transformador(input: Input): Output[] {
-  // TODO: implement
-  return [];
+  const output: Output[] = [];
+
+  input.nombres.forEach((value, index) => {
+    output.push({
+      id: index + 1,
+      nombre: value,
+      edad: input.edades[index],
+    });
+  });
+  return output;
 }
