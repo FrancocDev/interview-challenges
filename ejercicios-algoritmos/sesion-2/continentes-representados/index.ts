@@ -8,6 +8,7 @@ type Registry = {
 };
 
 export default function continentesRepresentados(array: Registry[]): boolean {
-  // TODO: implement
-  return false;
+  const continents = new Set();
+  array.forEach((registry) => continents.add(registry.continent));
+  return continents.size === 5;
 }
